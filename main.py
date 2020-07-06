@@ -5,8 +5,6 @@ chars = ' 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'
         '|}~'
 alphabet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!'
 
-password = create_password(alphabet)
-
 
 # print(password)
 
@@ -25,20 +23,23 @@ def main():
                   "Choose 1 or 2")
     except ValueError:
         print("Value error\n" +
-              "You must use numbers")
+              "Try again")
 
 
 def encrypt():
-    encrypt_var = f'{password} <-- {input("What resource is the password for?")}'
-    print()
+    password = create_password(alphabet)
+    encrypt_var = f'{password} <-- {input("What resource is the password for? ")}'
     key = int(input('Number: 1-62\n'))
-    print(encrypting(encrypt=encrypt_var, key=key, chars=chars))
+    encrypted_password = encrypting(encrypt=encrypt_var, key=key, chars=chars)
+    print(f"Your password --> {password} \n"
+          f"Encrypted password --> {encrypted_password}")
 
 
 def decrypt():
     key = int(input('Number: 1-62\n'))
-    string = input('String')
-    decrypting(sequence=string, key=key, chars=chars)
+    string = input('Encrypted password \n')
+    decrypted_password = decrypting(sequence=string, key=key, chars=chars)
+    print(decrypted_password)
 
 
 if __name__ == '__main__':
