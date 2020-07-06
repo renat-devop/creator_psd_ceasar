@@ -6,9 +6,6 @@ chars = ' 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'
 alphabet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!'
 
 
-# print(password)
-
-
 def main():
     try:
         num = int(input("Choose the number \n" +
