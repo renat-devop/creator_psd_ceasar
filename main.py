@@ -5,18 +5,40 @@ chars = ' 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'
         '|}~'
 alphabet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!'
 
-# password = create_password(alphabet)
+password = create_password(alphabet)
+
+
 # print(password)
 
 
 def main():
-    # encrypt = f'{password} <-- {input("Для какого ресурса пароль? ")}'
-    key = int(input('Число: 1-62\n'))
-    # a = encrypting(encrypt=encrypt, key=key, chars=chars)
-    a = input('Строка')
-    b = decrypting(sequence=a, key=key, chars=chars)
-    # print(a)
-    print(b)
+    try:
+        num = int(input("Choose the number \n" +
+                        "1) Create and encrypt password \n" +
+                        "2) Decrypt password \n"))
+        if num == 1:
+            encrypt()
+        elif num == 2:
+            decrypt()
+        elif type(num) is int:
+            print("Wrong choice\n" +
+                  "Choose 1 or 2")
+    except ValueError:
+        print("Value error\n" +
+              "You must use numbers")
+
+
+def encrypt():
+    encrypt_var = f'{password} <-- {input("Для какого ресурса пароль? ")}'
+    print()
+    key = int(input('Number: 1-62\n'))
+    print(encrypting(encrypt=encrypt_var, key=key, chars=chars))
+
+
+def decrypt():
+    key = int(input('Number: 1-62\n'))
+    string = input('String')
+    decrypting(sequence=string, key=key, chars=chars)
 
 
 if __name__ == '__main__':
