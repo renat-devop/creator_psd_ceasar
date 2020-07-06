@@ -29,7 +29,7 @@ def main():
 
 
 def encrypt():
-    encrypt_var = f'{password} <-- {input("Для какого ресурса пароль? ")}'
+    encrypt_var = f'{password} <-- {input("What resource is the password for?")}'
     print()
     key = int(input('Number: 1-62\n'))
     print(encrypting(encrypt=encrypt_var, key=key, chars=chars))
